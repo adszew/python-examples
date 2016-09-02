@@ -30,5 +30,3 @@ if __name__ == '__main__':
     account.withdraw(40)
     account.withdraw(140)
     account.display_balance()
-    
-    
