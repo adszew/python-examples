@@ -15,6 +15,13 @@ class BankAccount:
         """
         self.balance += amount
 
+    def transfer(self, other_account, amount):
+        """
+           Transfers money from one account to another.
+        """
+        self.balance -= amount
+        other_account.balance += amount
+
     def withdraw(self, amount):
         if (amount > self.balance):
             print("Insufficient funds")
@@ -29,4 +36,7 @@ if __name__ == '__main__':
     account.deposit(20)
     account.withdraw(40)
     account.withdraw(140)
-    account.display_balance()
+    account2 = BankAccount(120)
+    account2.transfer(account, 50)
+    account.display_balance() 
+    account2.display_balance()
